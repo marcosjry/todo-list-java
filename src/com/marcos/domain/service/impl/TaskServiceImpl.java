@@ -1,6 +1,7 @@
 package com.marcos.domain.service.impl;
 
 import com.marcos.domain.DTO.TaskDTO;
+import com.marcos.domain.exception.TaskNameAlreadyExistException;
 import com.marcos.domain.model.Task;
 import com.marcos.domain.model.TaskStatus;
 import com.marcos.domain.service.TaskService;
@@ -8,9 +9,7 @@ import com.marcos.domain.service.TaskService;
 import java.security.InvalidParameterException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -70,11 +69,16 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter) {
+    public void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter) throws TaskNameAlreadyExistException {
 
         System.out.println("Dê um nome pra sua Task");
         String name = scanner.nextLine();
         checkOnMain(name, "text");
+        Optional<Task> exists = existByName(name.toLowerCase(), tasks);
+
+        if (exists.isPresent()) {
+            throw new TaskNameAlreadyExistException("Já existe uma task com esse nome.");
+        }
 
         System.out.println("Insira uma Descrição");
         String description = scanner.nextLine();
@@ -135,6 +139,34 @@ public class TaskServiceImpl implements TaskService {
             afterFilter.forEach(task -> task.showTaskInfo(tasks.indexOf(task)));
         }
     }
+
+    @Override
+    public void deleteTaskByName(String name, LinkedList<Task> tasks) {
+        try {
+            var taskToRemove = tasks.stream().filter(task -> task.getName().equals(name)).findFirst();
+            if(taskToRemove.isEmpty()) {
+                throw new NoSuchElementException("Task not found.");
+            }
+            taskToRemove.ifPresent(tasks::remove);
+            System.out.println("Task removida com sucesso!");
+        }catch (NoSuchElementException e) {
+            System.out.println("Não foi encontrado uma task com esse nome.");
+        }
+    }
+
+    public Optional<Task> existByName(String name, LinkedList<Task> tasks) {
+        return tasks.stream().filter(task -> task.getName().toLowerCase().equals(name)).findAny();
+    }
+
+    public String spaceRemove(String text) {
+        String[] split = text.split(" ");
+        StringBuilder result = new StringBuilder();
+        for(String s : split) {
+            result.append(s.trim());
+        }
+        return result.toString();
+    }
+
 }
 
 
