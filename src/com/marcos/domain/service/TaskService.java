@@ -7,6 +7,7 @@ import java.security.InvalidParameterException;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public interface TaskService {
 
@@ -14,5 +15,7 @@ public interface TaskService {
 
     void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter);
 
-    LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, String filter);
+    LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, Function<Task, ?> propertyExtractor, Object filterValue);
+
+    void showListAfterFilter(LinkedList<Task> tasks, LinkedList<Task> afterFilter );
 }
