@@ -108,7 +108,12 @@ public class TaskServiceImpl implements TaskService {
         tasks.forEach(System.out::println);
     }
 
-
+    @Override
+    public LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, String filter) {
+        return tasks.stream().filter(task -> filter.equals(task.getCategory()))
+                .sorted((t1, t2) -> Integer.compare(t1.getPriority(), t2.getPriority()))
+                .collect(Collectors.toCollection(LinkedList::new));
+    }
 }
 
 

@@ -38,7 +38,10 @@ public class Main {
                         taskService.createTaskOnMain(scanner, tasks, formatter);
                         break;
                     case 2:
-                        System.out.println("teste 2");
+                        System.out.println("Por qual categoria você quer filtrar?");
+                        String category = scanner.nextLine();
+                        var filteredTasks = taskService.getTasksByFilter(tasks, category);
+                        filteredTasks.forEach(System.out::println);
                         break;
                     case 0:
                         isRunning = false;

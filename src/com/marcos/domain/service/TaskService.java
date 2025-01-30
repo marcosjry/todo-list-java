@@ -14,4 +14,5 @@ public interface TaskService {
 
     void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter);
 
+    LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, String filter);
 }
