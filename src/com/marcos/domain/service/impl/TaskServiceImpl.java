@@ -158,15 +158,6 @@ public class TaskServiceImpl implements TaskService {
         return tasks.stream().filter(task -> task.getName().toLowerCase().equals(name)).findAny();
     }
 
-    public String spaceRemove(String text) {
-        String[] split = text.split(" ");
-        StringBuilder result = new StringBuilder();
-        for(String s : split) {
-            result.append(s.trim());
-        }
-        return result.toString();
-    }
-
 }
 
 
