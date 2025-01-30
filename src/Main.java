@@ -1,4 +1,5 @@
 
+import com.marcos.domain.exception.TaskNameAlreadyExistException;
 import com.marcos.domain.model.Task;
 import com.marcos.domain.model.TaskStatus;
 import com.marcos.domain.service.TaskService;
@@ -25,10 +26,11 @@ public class Main {
         do {
             System.out.println("\n\nTODO-List --------------");
             System.out.println("    [Criar Task]     [1]");
+            System.out.println("    [Excluir Task]   [2]");
             System.out.println("--- Listar Tasks por ---");
-            System.out.println("    [Categoria]      [2]");
-            System.out.println("    [Prioridade]     [3]");
-            System.out.println("    [Status]         [4]");
+            System.out.println("    [Categoria]      [3]");
+            System.out.println("    [Prioridade]     [4]");
+            System.out.println("    [Status]         [5]");
             System.out.println("------------------------");
             System.out.println("[Sair]               [0]");
 
@@ -41,6 +43,11 @@ public class Main {
                         taskService.createTaskOnMain(scanner, tasks, formatter);
                         break;
                     case 2:
+                        System.out.println("Qual task você quer remover?");
+                        String taskNameToRemove = scanner.nextLine();
+                        taskService.deleteTaskByName(taskNameToRemove, tasks);
+                        break;
+                    case 3:
                         System.out.println("Por qual categoria você quer filtrar?");
                         String category = scanner.nextLine();
                         var filteredCategories = taskService.getTasksByFilter(
@@ -49,7 +56,7 @@ public class Main {
                                 category.toLowerCase());
                         taskService.showListAfterFilter(tasks, filteredCategories);
                         break;
-                    case 3:
+                    case 4:
                         System.out.println("Por qual Prioridade você quer filtrar?");
                         String priorityStr = scanner.nextLine();
                         int priority = Integer.parseInt(priorityStr);
@@ -59,7 +66,7 @@ public class Main {
                                 priority);
                         taskService.showListAfterFilter(tasks, filteredPriorities);
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Por qual Status você quer filtrar?");
                         String status = scanner.nextLine();
                         var filteredStatus = taskService.getTasksByFilter(
@@ -80,10 +87,9 @@ public class Main {
                 System.out.println(e.getMessage());
             } catch (IllegalArgumentException e) {
                 System.out.println("Status inválido.");
+            } catch (TaskNameAlreadyExistException e) {
+                System.out.println("\n"+ e.getMessage() + " porfavor declare uma nova.");
             }
         } while (isRunning);
-
     }
-
-
 }
