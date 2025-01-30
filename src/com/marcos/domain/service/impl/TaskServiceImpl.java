@@ -13,8 +13,6 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.marcos.domain.model.TaskStatus.TODO;
-
 public class TaskServiceImpl implements TaskService {
 
     @Override
@@ -74,7 +72,7 @@ public class TaskServiceImpl implements TaskService {
         System.out.println("Dê um nome pra sua Task");
         String name = scanner.nextLine();
         checkOnMain(name, "text");
-        Optional<Task> exists = existByName(name.toLowerCase(), tasks);
+        Optional<Task> exists = findByName(name.toLowerCase(), tasks);
 
         if (exists.isPresent()) {
             throw new TaskNameAlreadyExistException("Já existe uma task com esse nome.");
@@ -154,7 +152,7 @@ public class TaskServiceImpl implements TaskService {
         }
     }
 
-    public Optional<Task> existByName(String name, LinkedList<Task> tasks) {
+    public Optional<Task> findByName(String name, LinkedList<Task> tasks) {
         return tasks.stream().filter(task -> task.getName().toLowerCase().equals(name)).findAny();
     }
 
