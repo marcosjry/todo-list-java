@@ -1,5 +1,6 @@
 
 import com.marcos.domain.model.Task;
+import com.marcos.domain.model.TaskStatus;
 import com.marcos.domain.service.TaskService;
 import com.marcos.domain.service.impl.CustomFile;
 import com.marcos.domain.service.impl.TaskServiceImpl;
@@ -77,6 +78,8 @@ public class Main {
                 }
             } catch (InvalidParameterException | IOException |InterruptedException e) {
                 System.out.println(e.getMessage());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Status inválido.");
             }
         } while (isRunning);
 

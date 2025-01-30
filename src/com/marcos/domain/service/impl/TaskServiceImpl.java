@@ -14,6 +14,8 @@ import java.util.UUID;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static com.marcos.domain.model.TaskStatus.TODO;
+
 public class TaskServiceImpl implements TaskService {
 
     @Override
@@ -65,7 +67,6 @@ public class TaskServiceImpl implements TaskService {
                 throw new InvalidParameterException("text value is invalid.");
             }
         }
-
     }
 
     @Override
@@ -92,6 +93,9 @@ public class TaskServiceImpl implements TaskService {
         String date = scanner.nextLine();
         LocalDate endDate = LocalDate.parse(date, formatter);
 
+        System.out.println("Informe como está o andamento da Task");
+        String status = scanner.nextLine();
+        var taskStatus = TaskStatus.valueOf(status.toUpperCase());
         System.out.println("\n\nCriando Task...\n\n");
 
         tasks.add(
@@ -100,13 +104,17 @@ public class TaskServiceImpl implements TaskService {
                                 description,
                                 endDate,
                                 priority,
-                                TaskStatus.TODO,
+                                taskStatus,
                                 category)
                 )
         );
-
+        sortByPriority(tasks);
         System.out.println("Task Criada com sucesso!");
-        tasks.forEach(System.out::println);
+        tasks.forEach(task -> task.showTaskInfo(tasks.indexOf(task)));
+    }
+
+    public void sortByPriority(LinkedList<Task> tasks) {
+        tasks.sort((t1, t2) -> Integer.compare(t1.getPriority(), t2.getPriority()));
     }
 
     // Agora o método faz uso de uma Function pra conseguir filtrar por propriedade da Task
@@ -121,10 +129,11 @@ public class TaskServiceImpl implements TaskService {
 
     public void showListAfterFilter(LinkedList<Task> tasks, LinkedList<Task> afterFilter ) {
         if(afterFilter.isEmpty()) {
-            System.out.println("Não existe nenhuma task com esse filtro.");
+            System.out.println("\nNão existe nenhuma task com esse filtro.");
+        } else {
+            System.out.println("\nLista de Tasks Filtrada:\n");
+            afterFilter.forEach(task -> task.showTaskInfo(tasks.indexOf(task)));
         }
-        System.out.println("\nLista de Tasks Filtrada:\n");
-        afterFilter.forEach(task -> task.showTaskInfo(tasks.indexOf(task)));
     }
 }
 
