@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<Task> tasks = new LinkedList<>();
+        LinkedList<Task> tasks = CustomFile.loadTaskFromFile("TODO-TASK-LIST.txt");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         TaskService taskService = new TaskServiceImpl();
 
@@ -44,13 +44,14 @@ public class Main {
                         filteredTasks.forEach(System.out::println);
                         break;
                     case 0:
+                        CustomFile.saveFile(tasks, "TODO-TASK-LIST.txt");
                         isRunning = false;
                         break;
                     default:
                         System.out.println("\nErro. Provavelmente você está passando um input inválido. \n[Input] = " + toCheck + " \n\nPorfavor, use um input válido e tente novamente.\n\n");
                         Thread.sleep(300);
                 }
-            } catch (InvalidParameterException |InterruptedException e) {
+            } catch (InvalidParameterException | IOException |InterruptedException e) {
                 System.out.println(e.getMessage());
             }
         } while (isRunning);
