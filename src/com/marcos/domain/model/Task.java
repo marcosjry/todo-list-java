@@ -83,4 +83,16 @@ public class Task implements Serializable {
     public String toString() {
         return id + "; " + name + "; " + description + "; " + dateEnd + "; " + priority + "; " + status + "; " + category;
     }
+
+    public void showTaskInfo(int position) {
+        System.out.println("\n\nTask ["+ position+ "]");
+        System.out.println("id: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Description: " + description);
+        System.out.println("Date: " + dateEnd);
+        System.out.println("Priority: " + priority);
+        System.out.println("Status: " + status);
+        System.out.println("Category: " + category);
+
+    }
 }
