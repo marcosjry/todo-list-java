@@ -1,17 +1,27 @@
 package com.marcos.domain.model;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-public class Task {
+public class Task implements Serializable {
 
     private String id;
     private String name;
     private String description;
-    private LocalDateTime dateEnd;
+    private LocalDate dateEnd;
     private int priority;
     private TaskStatus status;
     private String category;
 
+    public Task (String id, String name, String description, LocalDate dateEnd, int priority, String status, String category) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.dateEnd = dateEnd;
+        this.priority = priority;
+        this.status = TaskStatus.valueOf(status);
+        this.category = category;
+    }
 
     public String getCategory() {
         return category;
@@ -37,11 +47,11 @@ public class Task {
         this.priority = priority;
     }
 
-    public LocalDateTime getDateEnd() {
+    public LocalDate getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(LocalDateTime dateEnd) {
+    public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
     }
 
@@ -69,4 +79,8 @@ public class Task {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return id + "; " + name + "; " + description + "; " + dateEnd + "; " + priority + "; " + status + "; " + category;
+    }
 }
