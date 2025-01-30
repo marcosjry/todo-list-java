@@ -35,7 +35,7 @@ public class Main {
             try {
                 switch (toCheck) {
                     case 1:
-                        System.out.println("teste 1");
+                        taskService.createTaskOnMain(scanner, tasks, formatter);
                         break;
                     case 2:
                         System.out.println("teste 2");

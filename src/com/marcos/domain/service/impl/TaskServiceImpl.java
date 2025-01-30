@@ -1,0 +1,114 @@
+package com.marcos.domain.service.impl;
+
+import com.marcos.domain.DTO.TaskDTO;
+import com.marcos.domain.model.Task;
+import com.marcos.domain.model.TaskStatus;
+import com.marcos.domain.service.TaskService;
+
+import java.security.InvalidParameterException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+public class TaskServiceImpl implements TaskService {
+
+    @Override
+    public Task createTask(TaskDTO taskDTO) {
+        var isValid = checkIfIsValid(taskDTO);
+        if (isValid) {
+
+            return new Task(
+                    UUID.randomUUID().toString(),
+                    taskDTO.name(),
+                    taskDTO.description(),
+                    taskDTO.dateEnd(),
+                    taskDTO.priority(),
+                    taskDTO.status().toString(),
+                    taskDTO.category()
+            );
+        }
+        throw new InvalidParameterException("Task parameter is invalid.");
+    }
+
+    private boolean checkIfIsValid(TaskDTO taskDTO) {
+        return (isNullOrEmpty(taskDTO.name())
+                && isNullOrEmpty(taskDTO.category())
+                && isInputValue(taskDTO.priority())
+                && isNullOrEmpty(taskDTO.description())
+                && isNullOrEmpty(taskDTO.status().getStatus())
+        );
+    }
+
+    public boolean isNullOrEmpty(String value) {
+        return value != null && !value.isEmpty();
+    }
+
+    public boolean isInputValue(int value) {
+        return value >= 1 && value <= 5;
+    }
+
+    public void checkOnMain(Object object, String type) throws InvalidParameterException {
+        if (type.equals("number")) {
+            int intCheck = (int) object;
+            boolean isValid = isInputValue(intCheck);
+            if (!isValid) {
+                throw new InvalidParameterException("Int value is Bigger than 5 or smaller than 1.");
+            }
+        } else if (type.equals("text")) {
+            String textCheck = (String) object;
+            boolean isValid = isNullOrEmpty(textCheck);
+            if (!isValid) {
+                throw new InvalidParameterException("text value is invalid.");
+            }
+        }
+
+    }
+
+    @Override
+    public void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter) {
+
+        System.out.println("Give a name to your task");
+        String name = scanner.nextLine();
+        checkOnMain(name, "text");
+
+        System.out.println("Enter a Description");
+        String description = scanner.nextLine();
+        checkOnMain(description, "text");
+
+        System.out.println("Enter a Category");
+        String category = scanner.nextLine();
+        checkOnMain(category, "text");
+
+        System.out.println("What should be the priority of your task? [1 a 5]");
+        String priorityFromUser = scanner.nextLine();
+        int priority = Integer.parseInt(priorityFromUser);
+        checkOnMain(priority, "number");
+
+        System.out.println("Enter the Task end date in the format (dd/MM/yyyy).");
+        String date = scanner.nextLine();
+        LocalDate endDate = LocalDate.parse(date, formatter);
+
+        System.out.println("\n\nCreating Task...\n\n");
+
+        tasks.add(
+                createTask(
+                        new TaskDTO(name,
+                                description,
+                                endDate,
+                                priority,
+                                TaskStatus.TODO,
+                                category)
+                )
+        );
+
+        System.out.println("Task Criada com sucesso!");
+        tasks.forEach(System.out::println);
+    }
+
+
+}
+
+
