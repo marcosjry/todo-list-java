@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.UUID;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TaskServiceImpl implements TaskService {
@@ -70,28 +71,28 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void createTaskOnMain(Scanner scanner, LinkedList<Task> tasks, DateTimeFormatter formatter) {
 
-        System.out.println("Give a name to your task");
+        System.out.println("Dê um nome pra sua Task");
         String name = scanner.nextLine();
         checkOnMain(name, "text");
 
-        System.out.println("Enter a Description");
+        System.out.println("Insira uma Descrição");
         String description = scanner.nextLine();
         checkOnMain(description, "text");
 
-        System.out.println("Enter a Category");
+        System.out.println("Digite uma Categoria para a Task");
         String category = scanner.nextLine();
         checkOnMain(category, "text");
 
-        System.out.println("What should be the priority of your task? [1 a 5]");
+        System.out.println("Qual deve ser a prioridade da task? [1 a 5]");
         String priorityFromUser = scanner.nextLine();
         int priority = Integer.parseInt(priorityFromUser);
         checkOnMain(priority, "number");
 
-        System.out.println("Enter the Task end date in the format (dd/MM/yyyy).");
+        System.out.println("Informe a data de término da Task (dd/MM/yyyy).");
         String date = scanner.nextLine();
         LocalDate endDate = LocalDate.parse(date, formatter);
 
-        System.out.println("\n\nCreating Task...\n\n");
+        System.out.println("\n\nCriando Task...\n\n");
 
         tasks.add(
                 createTask(
@@ -108,11 +109,22 @@ public class TaskServiceImpl implements TaskService {
         tasks.forEach(System.out::println);
     }
 
+    // Agora o método faz uso de uma Function pra conseguir filtrar por propriedade da Task
+    // Mais fácil de reutilizar para novos filtros no futuro
     @Override
-    public LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, String filter) {
-        return tasks.stream().filter(task -> filter.equals(task.getCategory()))
+    public LinkedList<Task> getTasksByFilter(LinkedList<Task> tasks, Function<Task, ?> propertyExtractor, Object filterValue) {
+        return tasks.stream()
+                .filter(task -> filterValue.equals(propertyExtractor.apply(task)))
                 .sorted((t1, t2) -> Integer.compare(t1.getPriority(), t2.getPriority()))
                 .collect(Collectors.toCollection(LinkedList::new));
+    }
+
+    public void showListAfterFilter(LinkedList<Task> tasks, LinkedList<Task> afterFilter ) {
+        if(afterFilter.isEmpty()) {
+            System.out.println("Não existe nenhuma task com esse filtro.");
+        }
+        System.out.println("\nLista de Tasks Filtrada:\n");
+        afterFilter.forEach(task -> task.showTaskInfo(tasks.indexOf(task)));
     }
 }
 

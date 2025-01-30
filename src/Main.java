@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
         boolean isRunning = true;
 
         do {
-            System.out.println("TODO-List --------------");
+            System.out.println("\n\nTODO-List --------------");
             System.out.println("    [Criar Task]     [1]");
             System.out.println("--- Listar Tasks por ---");
             System.out.println("    [Categoria]      [2]");
@@ -33,6 +34,7 @@ public class Main {
             String userInput = scanner.nextLine();
             int toCheck = Integer.parseInt(userInput);
             try {
+
                 switch (toCheck) {
                     case 1:
                         taskService.createTaskOnMain(scanner, tasks, formatter);
@@ -40,8 +42,30 @@ public class Main {
                     case 2:
                         System.out.println("Por qual categoria você quer filtrar?");
                         String category = scanner.nextLine();
-                        var filteredTasks = taskService.getTasksByFilter(tasks, category);
-                        filteredTasks.forEach(System.out::println);
+                        var filteredCategories = taskService.getTasksByFilter(
+                                tasks,
+                                Task::getCategory,
+                                category.toLowerCase());
+                        taskService.showListAfterFilter(tasks, filteredCategories);
+                        break;
+                    case 3:
+                        System.out.println("Por qual Prioridade você quer filtrar?");
+                        String priorityStr = scanner.nextLine();
+                        int priority = Integer.parseInt(priorityStr);
+                        var filteredPriorities = taskService.getTasksByFilter(
+                                tasks,
+                                Task::getPriority,
+                                priority);
+                        taskService.showListAfterFilter(tasks, filteredPriorities);
+                        break;
+                    case 4:
+                        System.out.println("Por qual Status você quer filtrar?");
+                        String status = scanner.nextLine();
+                        var filteredStatus = taskService.getTasksByFilter(
+                                tasks,
+                                Task::getStatus,
+                                status.toLowerCase());
+                        taskService.showListAfterFilter(tasks, filteredStatus);
                         break;
                     case 0:
                         CustomFile.saveFile(tasks, "TODO-TASK-LIST.txt");
