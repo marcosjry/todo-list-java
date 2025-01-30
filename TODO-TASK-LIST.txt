@@ -1,0 +1,76 @@
+43c5dde9-b9ef-4724-b25d-1216aa15695b; ir ao mercado; comprar pão, carne, arroz e feijao; 2025-01-29; 1; TODO; mercado
+a6da550e-6b18-49d2-85aa-fd4bbbf0c335; limpar a casa; limpar os quartos, banheiros e a área da casa.; 2025-02-01; 3; TODO; casa
+d85edbb1-f9a6-4a16-9af4-67df92d46fac; estudar; java, typescript, postgresql e groovy; 2025-01-29; 2; TODO; estudo
+5dd2e0f2-7d9c-48b4-978c-d15239399d2e; aprender um novo curso; aprender inglês; 2025-01-30; 3; TODO; curso
+9f1a7e43-3c7b-4b79-b8b4-f6c9c1a2d8c1; Ler um livro técnico; Aprender sobre arquitetura de software; 2025-02-10; 2; TODO; estudo
+d2b3f0e6-8c9d-42e6-9a33-f6fcb7c3e8d4; Praticar exercícios físicos; Fazer academia ou corrida; 2025-02-15; 3; TODO; saúde
+7cda06b8-5f3f-48b1-b86c-6a1f36a3df9f; Assistir curso de Spring Boot; Melhorar habilidades em backend; 2025-02-20; 3; TODO; curso
+ae90d2a3-56b1-4c1a-b7a7-8c74f5eb3d9a; Criar um projeto pessoal; Desenvolver um sistema web; 2025-02-25; 4; TODO; programação
+43ea12d4-7953-4f86-bcf5-bfb7f1e1f46c; Organizar documentos; Separar arquivos importantes; 2025-03-01; 2; TODO; pessoal
+18f5bd3a-7c98-4b49-9ff5-8f8c59b5f9a2; Planejar viagens do ano; Escolher destinos e datas; 2025-03-05; 2; TODO; lazer
+5dd2e0f2-7d9c-48b4-978c-d15239399d2e; aprender um novo curso; aprender inglês; 2025-01-30; 3; TODO; curso
+8a1b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p; estudar matemática; revisar álgebra e cálculo; 2024-11-15; 2; TODO; estudo
+a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p; ler um livro; ler 'Clean Code' de Robert C. Martin; 2024-12-01; 1; TODO; leitura
+b2c3d4e5-f6g7-8h9i-0j1k-l2m3n4o5p6q; fazer exercícios; correr 5 km; 2024-10-20; 2; TODO; saúde
+c3d4e5f6-g7h8-9i0j-1k2l-m3n4o5p6q7r; praticar programação; resolver problemas no LeetCode; 2024-11-30; 3; TODO; programação
+d4e5f6g7-h8i9-0j1k-2l3m-n4o5p6q7r8s; assistir a uma palestra; assistir palestra sobre IA; 2024-12-10; 1; TODO; aprendizado
+e5f6g7h8-i9j0-1k2l-3m4n-o5p6q7r8s9t; organizar a mesa; limpar e organizar a mesa de trabalho; 2024-10-25; 2; TODO; organização
+f6g7h8i9-j0k1-2l3m-4n5o-p6q7r8s9t0u; planejar a semana; criar um plano de tarefas para a semana; 2024-11-01; 1; TODO; planejamento
+g7h8i9j0-k1l2-3m4n-5o6p-q7r8s9t0u1v; escrever um artigo; escrever sobre boas práticas de programação; 2024-12-05; 3; TODO; escrita
+h8i9j0k1-l2m3-4n5o-6p7q-r8s9t0u1v2w; revisar documentos; revisar contrato do cliente; 2024-11-10; 2; TODO; trabalho
+i9j0k1l2-m3n4-5o6p-7q8r-s9t0u1v2w3x; aprender React; estudar componentes e hooks; 2025-01-15; 3; TODO; curso
+j0k1l2m3-n4o5-6p7q-8r9s-t0u1v2w3x4y; estudar Node.js; aprender a criar APIs RESTful; 2025-02-01; 2; TODO; curso
+k1l2m3n4-o5p6-7q8r-9s0t-u1v2w3x4y5z; praticar TypeScript; criar um projeto com TypeScript; 2024-12-20; 3; TODO; programação
+l2m3n4o5-p6q7-8r9s-0t1u-v2w3x4y5z6a; ler documentação; ler a documentação do Docker; 2024-11-25; 5; TODO; aprendizado
+m3n4o5p6-q7r8-9s0t-1u2v-w3x4y5z6a7b; estudar AWS; aprender sobre EC2 e S3; 2025-01-10; 3; TODO; curso
+n4o5p6q7-r8s9-0t1u-2v3w-x4y5z6a7b8c; fazer exercícios; malhar na academia; 2024-10-30; 2; TODO; saúde
+o5p6q7r8-s9t0-1u2v-3w4x-y5z6a7b8c9d; assistir a um tutorial; assistir tutorial sobre Git; 2024-11-05; 1; TODO; aprendizado
+p6q7r8s9-t0u1-2v3w-4x5y-z6a7b8c9d0e; organizar e-mail; limpar a caixa de entrada; 2024-12-15; 2; TODO; organização
+q7r8s9t0-u1v2-3w4x-5y6z-a7b8c9d0e1f; planejar férias; pesquisar destinos e preços; 2025-02-10; 1; TODO; planejamento
+r8s9t0u1-v2w3-4x5y-6z7a-b8c9d0e1f2g; escrever relatório; escrever relatório mensal; 2024-11-20; 3; TODO; trabalho
+s9t0u1v2-w3x4-5y6z-7a8b-c9d0e1f2g3h; revisar código; revisar PRs no GitHub; 2024-12-25; 2; TODO; programação
+t0u1v2w3-x4y5-6z7a-8b9c-d0e1f2g3h4i; estudar Python; aprender sobre machine learning; 2025-01-20; 3; TODO; curso
+u1v2w3x4-y5z6-7a8b-9c0d-e1f2g3h4i5j; praticar SQL; resolver exercícios de SQL; 2024-11-30; 2; TODO; programação
+v2w3x4y5-z6a7-8b9c-0d1e-f2g3h4i5j6k; ler um artigo; ler sobre boas práticas de DevOps; 2024-12-05; 1; TODO; leitura
+w3x4y5z6-a7b8-9c0d-1e2f-g3h4i5j6k7l; estudar Docker; aprender a criar containers; 2025-01-05; 3; TODO; curso
+x4y5z6a7-b8c9-0d1e-2f3g-h4i5j6k7l8m; fazer yoga; praticar yoga por 30 minutos; 2024-10-28; 2; TODO; saúde
+y5z6a7b8-c9d0-1e2f-3g4h-i5j6k7l8m9n; assistir a um webinar; assistir webinar sobre segurança cibernética; 2024-11-12; 2; TODO; aprendizado
+z6a7b8c9-d0e1-2f3g-4h5i-j6k7l8m9n0o; organizar arquivos; organizar documentos na nuvem; 2024-12-18; 2; TODO; organização
+a7b8c9d0-e1f2-3g4h-5i6j-k7l8m9n0o1p; planejar metas; definir metas para o próximo ano; 2025-01-01; 1; TODO; planejamento
+b8c9d0e1-f2g3-4h5i-6j7k-l8m9n0o1p2q; escrever um script; automatizar tarefas com Python; 2024-11-22; 3; TODO; programação
+c9d0e1f2-g3h4-5i6j-7k8l-m9n0o1p2q3r; revisar design; revisar design do novo site; 2024-12-30; 2; TODO; trabalho
+d0e1f2g3-h4i5-6j7k-8l9m-n0o1p2q3r4s; estudar Kubernetes; aprender a orquestrar containers; 2025-01-25; 3; TODO; curso
+e1f2g3h4-i5j6-7k8l-9m0n-o1p2q3r4s5t; praticar algoritmos; resolver problemas no HackerRank; 2024-11-28; 2; TODO; programação
+f2g3h4i5-j6k7-8l9m-0n1o-p2q3r4s5t6u; ler um paper; ler paper sobre IA generativa; 2024-12-08; 1; TODO; leitura
+g3h4i5j6-k7l8-9m0n-1o2p-q3r4s5t6u7v; estudar GraphQL; aprender a criar APIs com GraphQL; 2025-01-12; 3; TODO; curso
+h4i5j6k7-l8m9-0n1o-2p3q-r4s5t6u7v8w; fazer caminhada; caminhar no parque por 1 hora; 2024-10-29; 2; TODO; saúde
+i5j6k7l8-m9n0-1o2p-3q4r-s5t6u7v8w9x; assistir a um curso; assistir curso sobre React Native; 2024-11-14; 1; TODO; aprendizado
+j6k7l8m9-n0o1-2p3q-4r5s-t6u7v8w9x0y; organizar reunião; agendar reunião com a equipe; 2024-12-22; 2; TODO; organização
+k7l8m9n0-o1p2-3q4r-5s6t-u7v8w9x0y1z; planejar orçamento; criar orçamento para o próximo trimestre; 2025-01-03; 1; TODO; planejamento
+l8m9n0o1-p2q3-4r5s-6t7u-v8w9x0y1z2a; escrever documentação; documentar novo projeto; 2024-11-24; 3; TODO; trabalho
+m9n0o1p2-q3r4-5s6t-7u8v-w9x0y1z2a3b; revisar testes; revisar testes automatizados; 2024-12-28; 2; TODO; programação
+n0o1p2q3-r4s5-6t7u-8v9w-x0y1z2a3b4c; estudar MongoDB; aprender a usar bancos NoSQL; 2025-01-18; 3; TODO; curso
+o1p2q3r4-s5t6-7u8v-9w0x-y1z2a3b4c5d; praticar Java; criar um projeto com Spring Boot; 2024-11-29; 2; TODO; programação
+p2q3r4s5-t6u7-8v9w-0x1y-z2a3b4c5d6e; ler um blog; ler sobre tendências de TI; 2024-12-09; 1; TODO; leitura
+q3r4s5t6-u7v8-9w0x-1y2z-a3b4c5d6e7f; estudar Firebase; aprender a usar Firebase para apps; 2025-01-14; 3; TODO; curso
+r4s5t6u7-v8w9-0x1y-2z3a-b4c5d6e7f8g; fazer alongamento; alongar por 15 minutos; 2024-10-31; 2; TODO; saúde
+s5t6u7v8-w9x0-1y2z-3a4b-c5d6e7f8g9h; assistir a um vídeo; assistir vídeo sobre Docker Compose; 2024-11-16; 4; TODO; aprendizado
+t6u7v8w9-x0y1-2z3a-4b5c-d6e7f8g9h0i; organizar agenda; atualizar agenda semanal; 2024-12-24; 2; TODO; organização
+u7v8w9x0-y1z2-3a4b-5c6d-e7f8g9h0i1j; planejar viagem; planejar viagem de férias; 2025-01-05; 1; TODO; planejamento
+v8w9x0y1-z2a3-4b5c-6d7e-f8g9h0i1j2k; escrever código; implementar nova funcionalidade; 2024-11-26; 3; TODO; programação
+w9x0y1z2-a3b4-5c6d-7e8f-g9h0i1j2k3l; revisar design; revisar design do app móvel; 2024-12-29; 2; TODO; trabalho
+x0y1z2a3-b4c5-6d7e-8f9g-h0i1j2k3l4m; estudar Redis; aprender a usar Redis para cache; 2025-01-22; 3; TODO; curso
+y1z2a3b4-c5d6-7e8f-9g0h-i1j2k3l4m5n; praticar C#; criar um projeto com .NET; 2024-11-30; 2; TODO; programação
+z2a3b4c5-d6e7-8f9g-0h1i-j2k3l4m5n6o; ler um guia; ler guia sobre boas práticas de UX; 2024-12-10; 1; TODO; leitura
+a3b4c5d6-e7f8-9g0h-1i2j-k3l4m5n6o7p; estudar Elasticsearch; aprender a usar Elasticsearch; 2025-01-16; 3; TODO; curso
+b4c5d6e7-f8g9-0h1i-2j3k-l4m5n6o7p8q; fazer meditação; meditar por 20 minutos; 2024-11-01; 2; TODO; saúde
+c5d6e7f8-g9h0-1i2j-3k4l-m5n6o7p8q9r; assistir a um podcast; ouvir podcast sobre carreira; 2024-11-18; 2; TODO; aprendizado
+d6e7f8g9-h0i1-2j3k-4l5m-n6o7p8q9r0s; organizar documentos; organizar documentos fiscais; 2024-12-26; 2; TODO; organização
+e7f8g9h0-i1j2-3k4l-5m6n-o7p8q9r0s1t; planejar eventos; planejar eventos para o próximo ano; 2025-01-07; 1; TODO; planejamento
+f8g9h0i1-j2k3-4l5m-6n7o-p8q9r0s1t2u; escrever testes; escrever testes unitários; 2024-11-27; 3; TODO; programação
+g9h0i1j2-k3l4-5m6n-7o8p-q9r0s1t2u3v; revisar código; revisar código do novo recurso; 2024-12-31; 2; TODO; trabalho
+h0i1j2k3-l4m5-6n7o-8p9q-r0s1t2u3v4w; estudar Kafka; aprender a usar Kafka para streams; 2025-01-24; 3; TODO; curso
+i1j2k3l4-m5n6-7o8p-9q0r-s1t2u3v4w5x; praticar Go; criar um projeto com Go; 2024-12-01; 2; TODO; programação
+j2k3l4m5-n6o7-8p9q-0r1s-t2u3v4w5x6y; ler um manual; ler manual de boas práticas de DevOps; 2024-12-12; 1; TODO; leitura
+k3l4m5n6-o7p8-9q0r-1s2t-u3v4w5x6y7z; estudar RabbitMQ; aprender a usar RabbitMQ; 2025-01-19; 3; TODO; curso
+bbee1717-83f9-4064-a668-d049cc4ffff0; ir ao mercado; comprar doce e salgadinhos; 2025-01-29; 3; TODO; lazer
