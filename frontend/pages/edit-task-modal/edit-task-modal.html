@@ -1,0 +1,40 @@
+<!-- pages/edit-modal.html -->
+<div class="container">
+    <span class="close">&times;</span>
+    <h2>Editar Tarefa</h2>
+    <form id="editTaskForm">
+        <label for="editTaskName">Nome da Tarefa:</label>
+        <input type="text" id="editTaskName" required>
+
+        <label for="editTaskDescription">Descrição:</label>
+        <textarea id="editTaskDescription" rows="4" required></textarea>
+
+        <label for="editTaskCategory">Categoria:</label>
+        <select id="editTaskCategory" required>
+            <option value="trabalho">Trabalho</option>
+            <option value="pessoal">Pessoal</option>
+            <option value="estudos">Estudos</option>
+            <option value="outros">Outros</option>
+        </select>
+
+        <label for="editTaskPriority">Prioridade:</label>
+        <select id="editTaskPriority" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="editTaskDueDate">Data de Término:</label>
+        <input type="date" id="editTaskDueDate" required>
+
+        <label for="editTaskStatus">Andamento:</label>
+        <select id="editTaskStatus" required>
+            <option value="A fazer">A fazer (To Do)</option>
+            <option value="Em progresso">Em progresso (Doing)</option>
+            <option value="Concluído">Concluído (Done)</option>
+        </select>
+        <button class="edit-task-button" type="submit">Salvar Alterações</button>
+    </form>
+</div>

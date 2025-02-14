@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Tarefa</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/components/create-task/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Nova Tarefa</h1>
+        
+        <form id="taskForm">
+            <!-- Nome da Tarefa -->
+            <label for="taskName">Nome da Tarefa:</label>
+            <input type="text" id="taskName" name="taskName" required>
+            
+            <!-- Descrição da Tarefa -->
+            <label for="taskDescription">Descrição:</label>
+            <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea>
+            
+            <!-- Categoria -->
+            <label for="taskCategory">Categoria:</label>
+            <select id="taskCategory" name="taskCategory" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="trabalho">Trabalho</option>
+                <option value="pessoal">Pessoal</option>
+                <option value="estudos">Estudos</option>
+                <option value="outros">Outros</option>
+            </select>
+            
+            <!-- Prioridade -->
+            <label for="taskPriority">Prioridade:</label>
+            <select id="taskPriority" name="taskPriority" required>
+                <option value="">Selecione a prioridade</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <!-- Data de Término -->
+            <label for="taskDueDate">Data de Término:</label>
+            <input type="date" id="taskDueDate" name="taskDueDate" required>
+            
+            <!-- Andamento -->
+            <label for="taskStatus">Andamento:</label>
+            <select id="taskStatus" name="taskStatus" required>
+                <option value="">Selecione o andamento</option>
+                <option value="A fazer">A fazer (To Do)</option>
+                <option value="Em progresso">Em progresso (Doing)</option>
+                <option value="Concluído">Concluído (Done)</option>
+            </select>
+            
+            <!-- Botão de Salvar -->
+            <button type="submit">Salvar Tarefa</button>
+        </form>
+    </div>
+
+    <script src="../../scripts/components/create-task/create-task.js"></script>
+</body>
+</html>

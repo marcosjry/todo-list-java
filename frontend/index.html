@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/components/edit-task-modal/edit-task-modal.css">
 </head>
 <body>
     <div class="container">
@@ -12,32 +14,20 @@
         
         <!-- Barra de pesquisa e botões -->
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Pesquisar tarefa...">
+            <input type="text" id="searchInput" placeholder="Pesquisar andamento...">
             <button id="searchButton">Pesquisar</button>
             <button id="createTaskButton">Criar Tarefa</button>
         </div>
 
         <!-- Lista de tarefas -->
-        <div class="task-list">
-            <div class="task">
-                <h3>Teste1</h3>
-                <p>T1</p>
-            </div>
-            <div class="task">
-                <h3>Teste2</h3>
-                <p>T2</p>
-            </div>
-            <div class="task">
-                <h3>Teste3</h3>
-                <p>T3</p>
-            </div>
-            <div class="task">
-                <h3>Teste4</h3>
-                <p>T4</p>
-            </div>
+        <div id="taskList" class="task-list">
+            <!-- As tarefas serão carregadas aqui dinamicamente -->
         </div>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <!-- Container para o modal -->
+    <div id="editModal" class="modal"></div>
+
+    <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
