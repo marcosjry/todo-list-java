@@ -1,0 +1,48 @@
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form textarea {
+    max-width: 100%; 
+    max-height: 200px; 
+    resize: vertical; 
+}
+
+.edit-task-button {
+    margin-left: 5px;
+    border: #24a3ec;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    margin-top: 5px;
+    background: #24a3ec;
+    font-weight: 800;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 595px) {
+    .container {
+        width: 95%;
+    }
+}
