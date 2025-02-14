@@ -25,5 +25,5 @@ document.getElementById('taskForm').addEventListener('submit', function (e) {
     localStorage.setItem('tasks', JSON.stringify(tasks)); // Salva no localStorage
 
     // Redireciona de volta para a lista de tarefas
-    window.location.href = '../../../frontend/index.html';
+    window.location.href = '/index.html';
 });
