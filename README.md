@@ -1,8 +1,17 @@
-# Criando TODO List apenas utilizando Java
+# Criando TODO List
 
-___
+>   Essa aplicação está em desenvolvimento. 
+>   Atualmente o frontend foi implementado usando apenas **HTML - CSS - Javascript**.
 
-> O programa é simples e pode ser testado via terminal. Ele foi compilado e para conseguir executá-lo, é necessário que você possua pelo menos o JDK 17 ou uma versão mais recente.
+Foi criada uma interface para que o usuário consiga criar suas tarefas da `TO-DO list`.
+ 
+No momento não há comunicação entre Backend -> Frontend. Mas algumas funcionalidades já estão implementadas na interface. Sendo elas:
+* Listagem de tasks.
+* É possível filtrar através da barra de busca.
+* É possível criar, alterar e deletar tasks criadas.
+* A princípio os dados estão sendo salvos no **LocalStorage**.
+---
+> O programa é simples e por enquanto pode ser testado via terminal. Ele foi compilado e para conseguir executá-lo, é necessário que você possua pelo menos o JDK 17 ou uma versão mais recente.
 ___
 
 **1°** - Clone o repositório em alguma local da sua máquina
